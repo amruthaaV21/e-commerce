@@ -10,12 +10,15 @@
     </section>
   </aside>
  
+  
+  </br>
+  &nbsp;&nbsp;&nbsp;
   <%= link_to "Add new product",{:controller => "products", :action => "new", :user => @user.id }  %> 
   
  <div class="col-md-8">
  
     <% if @user.products.any? %>
-    
+      
       <h3>Products</h3>
       <%= will_paginate @products %>
       <table id = "products">
