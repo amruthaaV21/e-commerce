@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @products = @user.products.paginate(page: params[:page],per_page: 30)
     if @user == current_user
 	render 'show'
     elsif current_user.try(:admin?)
@@ -61,28 +62,12 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
-  # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-
+    
     # Confirms the correct user.
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
 
-  # Confirms an admin user.
-    def admin_user
-     if current_user.nil?
-       redirect_to login_url
-     elsif !(current_user.try(:admin?))
-       redirect_to root_url
-   end
-  end
-  
+   
 end

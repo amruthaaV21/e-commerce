@@ -1,0 +1,17 @@
+<li id="product-<%= product.id %>">
+  <span class="name"><%= product.name %></span>
+  <span class="category"><%= product.category %></span>
+  <span class="price"><%= product.price %></span>
+  <span class="quantity"><%= product.quantity %></span>
+  <span class="discount"><%= product.discount %></span>
+  <%= image_tag product.picture.url if product.picture? %>
+  <span class="timestamp">
+ 
+    <% if current_user?(product.user) %>
+      <%= link_to "delete", product, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+  
+</li>
+

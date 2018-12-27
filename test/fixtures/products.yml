@@ -1,0 +1,68 @@
+choci:
+  name: "cadbury"
+  category: "chocolate"
+  price: 10.00
+  quantity: 10
+  discount: 10.00
+  user: ammu
+
+bisc:
+  name: "marie gold"
+  category: "biscuit"
+  price: 20.00
+  quantity: 50
+  discount: 5.00
+  user: ammu
+
+
+chips:
+  name: "lays"
+  category: "chips"
+  price: 10.00
+  quantity: 10
+  discount: 10.00
+  user: ammu
+
+
+
+<% 100.times do |n| %>
+product_<%= n %>:
+  name: Faker::Lorem.character
+  category: Faker::Lorem.sentence(5)
+  price: Faker::Number.decimal(5)
+  quantity: rand(52..112)
+  discount: Faker::Number.decimal(5)
+  user: ammu
+<% end %>
+
+access:
+  name: "watch"
+  category: "accessories"
+  price: 1000.00
+  quantity: 5
+  discount: 10.00
+  user: raji
+
+ornam:
+  name: "earring"
+  category: "accessories"
+  price: 100.00
+  quantity: 10
+  discount: 1.00
+  user: raji
+
+fash:
+  name: "legging"
+  category: "dress"
+  price: 400.00
+  quantity: 10
+  discount: 10.00
+  user: lana
+
+trad:
+  name: "chudi"
+  category: "chips"
+  price: 600.00
+  quantity: 10
+  discount: 10.00
+  user: lana
