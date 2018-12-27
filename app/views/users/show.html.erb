@@ -44,7 +44,7 @@
        <td><%= product.quantity %></td>
        <td><%= product.discount %></td>
        <td>
-       <%= link_to "image", product.picture.url if product.picture? %>
+       <%= link_to "image", product.picture.url,target: :_blank if product.picture?  %>
        </td>
        <td>
        <%= link_to "edit" , edit_product_path(product) %>
