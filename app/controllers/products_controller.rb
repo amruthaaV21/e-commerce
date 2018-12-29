@@ -20,6 +20,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def index
+  @products =  Product.all
+
+  respond_to do |format|
+    format.html
+    format.xlsx
+    end
+  end
+
   def edit
      @product = Product.find(params[:id])
   end

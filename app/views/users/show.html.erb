@@ -12,14 +12,19 @@
  
   
   </br>
+  
   &nbsp;&nbsp;&nbsp;
   <%= link_to "Add new product",{:controller => "products", :action => "new", :user => @user.id }  %> 
   
+  &nbsp;&nbsp;&nbsp;
+  <%= link_to "Export Sales Data", products_path(format: "xlsx") %>
+  
  <div class="col-md-8">
- 
+    <% i=0 %>
     <% if @user.products.any? %>
       
       <h3>Products</h3>
+      
       <%= will_paginate @products %>
       <table id = "products">
        <tr>
@@ -33,7 +38,7 @@
         <th>Edit</th>
         <th>Destroy</th>
        </tr>
-      <% i=0 %>
+      
       <%@products.each do |product|
        i+=1 %>
       <tr>
