@@ -27,8 +27,8 @@ chips:
 
 <% 100.times do |n| %>
 product_<%= n %>:
-  name: Faker::Lorem.character
-  category: Faker::Lorem.sentence(5)
+  name: Faker::Lorem.word
+  category: Faker::Lorem.word
   price: Faker::Number.decimal(5)
   quantity: rand(52..112)
   discount: Faker::Number.decimal(5)

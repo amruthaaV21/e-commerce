@@ -47,7 +47,7 @@
        <%= link_to "image", product.picture.url,target: :_blank if product.picture?  %>
        </td>
        <td>
-       <%= link_to "edit" , edit_product_path(product) %>
+       <%= link_to "edit" , {:controller => "products", :action => "edit", :user => @user.id , :id => product.id} %>
        </td>
        <td> 
        <%= link_to "delete", product, method: :delete,

@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 
     if @product.save
       flash[:success] = "product created!"
-      redirect_to root_url
+      redirect_to user_path(@user)
     else
       render 'static_pages/home'
     end
@@ -25,10 +25,11 @@ class ProductsController < ApplicationController
   end
 
   def update
+     @user = User.find(params[:user_id])
      @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
      flash[:success] = "Product details updated"
-     redirect_to current_user
+     redirect_to user_path(@user)
     else
       render 'edit'
     end

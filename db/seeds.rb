@@ -21,7 +21,7 @@ end
 users = User.order(:created_at).take(6)
 200.times do
   name = Faker::Lorem.word
-  category = Faker::Lorem.sentence(1)
+  category = Faker::Lorem.word
   price = Faker::Number.decimal(5)
   quantity = rand(52..112)
   discount = Faker::Number.decimal(5)
