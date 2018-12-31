@@ -4,7 +4,7 @@ desc "Send email to users"
 
 task :email_sender => :environment do |_, args|
   User.find_each do |user|
-    UserMailer.daily_mail(user).deliver
+    UserMailer.sales_report(user).deliver
   end
 end
 

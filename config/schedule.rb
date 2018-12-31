@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every :day, :at => '5pm' do
+every :day, :at => '11am' do
   rake "email_sender"
 end
