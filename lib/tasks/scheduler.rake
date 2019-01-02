@@ -1,4 +1,4 @@
-namespace :mail_task do
+namespace :scheduler do
 
 desc "Send email to users"
 
