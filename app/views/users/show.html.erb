@@ -17,7 +17,7 @@
   <%= link_to "Add new product",{:controller => "products", :action => "new", :user => @user.id }  %> 
   
   &nbsp;&nbsp;&nbsp;
-  <%= link_to "Export Sales Data", products_path(format: "xlsx") %>
+  <%= link_to "Export Sales Data", {:controller => "products", :action => "show", :user => @user.id, :format=>:xlsx } %>
   
  <div class="col-md-8">
     <% i=0 %>

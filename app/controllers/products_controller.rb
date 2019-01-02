@@ -20,8 +20,9 @@ class ProductsController < ApplicationController
     end
   end
 
-  def index
-  @products =  Product.all
+  def show
+  @user = User.find(params[:user])
+  @products =  @user.products
 
   respond_to do |format|
     format.html
